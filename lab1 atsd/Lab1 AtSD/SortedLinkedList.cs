@@ -56,6 +56,29 @@ namespace Lab1_AtSD
             }
         }
 
+        public void Clear()
+        {
+            head = null;
+            tail = null;
+            length = 0;
+        }
+
+        public void Print()
+        {
+            int i = 0;
+            Node<T> current = head;
+            while (current != null)
+            {
+                Console.WriteLine($"{i++}:" + current.Data);
+                current = current.Next;
+            }
+            Console.WriteLine();
+        }
+
+        public void Length()
+        {
+            Console.WriteLine("Length: " + length);
+        }
 
         public int Compare( T x, T y)
         {
