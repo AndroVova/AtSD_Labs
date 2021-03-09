@@ -80,6 +80,26 @@ namespace Lab1_AtSD
             Console.WriteLine("Length: " + length);
         }
 
+        public void Search(T data)
+        {
+            Node<T> current = head;
+            while (current != null)
+            {
+                if (current.Data.Equals(data))
+                    Console.WriteLine($"{data} is located in a list");
+                current = current.Next;
+            }
+            Console.WriteLine($"{data} is not located in a list");
+        }
+
+        public void IsEmpty()
+        {
+            if (head == null && tail == null && length == 0)
+                Console.WriteLine("List is empty");
+            else
+                Console.WriteLine("List isn`t empty");
+        }
+
         public int Compare( T x, T y)
         {
             throw new NotImplementedException();

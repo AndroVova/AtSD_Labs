@@ -6,7 +6,7 @@ namespace Lab1_AtSD
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var list = new SortedLinkedList<int>();
         }
     }
 }
