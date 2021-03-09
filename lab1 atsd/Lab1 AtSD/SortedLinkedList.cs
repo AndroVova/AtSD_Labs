@@ -17,6 +17,18 @@ namespace Lab1_AtSD
             get => length;
         }
 
+        public void Add(T data)
+        {
+            var Item = new Node<T>(data);
+            if (head == null)
+                head = Item;
+            else
+                tail.Next = Item;
+            tail = Item;
+
+            length++;
+        }
+
         public int Compare( T x, T y)
         {
             throw new NotImplementedException();
