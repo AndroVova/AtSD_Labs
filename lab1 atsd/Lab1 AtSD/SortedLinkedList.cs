@@ -29,6 +29,34 @@ namespace Lab1_AtSD
             length++;
         }
 
+        public void Delete(T data)
+        {
+            Node<T> current = head;
+            Node<T> previous = null;
+            while (current != null)
+            {
+                if (current.Data.Equals(data))
+                {
+                    if (previous != null)
+                    {
+                        previous.Next = current.Next;
+                        if (current.Next == null)
+                            tail = previous;
+                    }
+                    else
+                    {
+                        head = head.Next;
+                        if (head == null)
+                            tail = null;
+                    }
+                    length--;
+                }
+                previous = current;
+                current = current.Next;
+            }
+        }
+
+
         public int Compare( T x, T y)
         {
             throw new NotImplementedException();
