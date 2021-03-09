@@ -100,19 +100,18 @@ namespace Lab1_AtSD
                 Console.WriteLine("List isn`t empty");
         }
 
-        public int Compare( T x, T y)
-        {
-            throw new NotImplementedException();
-        }
+        public int Compare(T x, T y) => Comparer.Default.Compare(x, y);
 
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            var current = head;
+            while (current != null)
+            {
+                yield return current.Data;
+                current = current.Next;
+            }
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
+        IEnumerator IEnumerable.GetEnumerator() => ((IEnumerable)this).GetEnumerator();        
     }
 }
