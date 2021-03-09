@@ -19,13 +19,24 @@ namespace Lab1_AtSD
 
         public void Add(T data)
         {
-            var Item = new Node<T>(data);
-            if (head == null)
-                head = Item;
+            Node<T> node = new Node<T>(data);
+            Node<T> current;
+            if (head == null || Comparer.Default.Compare(head.Data, node.Data) > 0)
+            {
+                node.Next = head;
+                head = node;
+            }
             else
-                tail.Next = Item;
-            tail = Item;
+            {
+                current = head;
+                while (Comparer.Default.Compare(current.Next.Data, node.Data) < 0 && current.Next != null)
+                {
+                    current = current.Next;
+                }
+                node.Next = current.Next;
+                current.Next = node;
 
+            }
             length++;
         }
 
